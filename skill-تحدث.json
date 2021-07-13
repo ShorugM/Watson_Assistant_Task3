@@ -1,0 +1,427 @@
+{
+  "intents": [
+    {
+      "intent": "انفو",
+      "examples": [
+        {
+          "text": "1"
+        },
+        {
+          "text": "١"
+        },
+        {
+          "text": "واحد"
+        },
+        {
+          "text": "ون"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "انفورميشن",
+      "examples": [
+        {
+          "text": "2"
+        },
+        {
+          "text": "٢"
+        },
+        {
+          "text": "اثنان"
+        },
+        {
+          "text": "اثنين"
+        },
+        {
+          "text": "تو"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "باي",
+      "examples": [
+        {
+          "text": "0"
+        },
+        {
+          "text": "٠"
+        },
+        {
+          "text": "باي"
+        },
+        {
+          "text": "زيرو"
+        },
+        {
+          "text": "شكرا"
+        },
+        {
+          "text": "صفر"
+        },
+        {
+          "text": "مع السلامة"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "ترحيب",
+      "examples": [
+        {
+          "text": "السلام عليكم ورحمة الله وبركاته"
+        },
+        {
+          "text": "الو"
+        },
+        {
+          "text": "اهلا"
+        },
+        {
+          "text": "اهلن"
+        },
+        {
+          "text": "اهلين"
+        },
+        {
+          "text": "سلام"
+        },
+        {
+          "text": "مرحبا"
+        },
+        {
+          "text": "هاي"
+        },
+        {
+          "text": "هايات"
+        },
+        {
+          "text": "هلا"
+        },
+        {
+          "text": "هلو"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "مسارات_التدريب_التعاوني",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "الذكاء الصناعي",
+          "synonyms": [
+            "الذكاء الاصطناعي"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "الهندسة الصناعية وهندسة النظم",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "الهندسة الميكانيكية",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "انترنت الاشياء",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "event_handler",
+      "parent": "slot_5_1626132911400",
+      "event_name": "input",
+      "dialog_node": "handler_1_1626132911436"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_2_1626132890024",
+      "event_name": "focus",
+      "dialog_node": "handler_2_1626132890057",
+      "previous_sibling": "handler_4_1626132890057"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_5_1626132911400",
+      "event_name": "focus",
+      "dialog_node": "handler_3_1626132911436",
+      "previous_sibling": "handler_1_1626132911436"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_2_1626132890024",
+      "event_name": "input",
+      "dialog_node": "handler_4_1626132890057"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "مـرحبا بك في التدريب التعاوني ."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "اذا كنت حاب تتعرف علينا ارسل 1 ."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "لعرض المسارات المتاحة للتدريب التعاوني ارسل 2 ."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "للمغادرة ارسل 0"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#ترحيب",
+      "dialog_node": "node_2_1626129755536",
+      "previous_sibling": "مرحبا"
+    },
+    {
+      "type": "frame",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "1- انترنت الاشياء \n2- الذكاء الصناعي\n3- الهندسة الميكانيكية\n4- الهندسة الصناعية وهندسة النظم"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "اذا كنت حاب تتعرف علينا ارسل 1 ."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "لعرض المسارات المتاحة للتدريب التعاوني ارسل 2 ."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "للمغادرة ارسل 0"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#انفورميشن",
+      "dialog_node": "node_3_1626131136037",
+      "previous_sibling": "node_9_1626130802317"
+    },
+    {
+      "type": "standard",
+      "title": "باي",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "نراك لاحقاً."
+              },
+              {
+                "text": "وداعاً"
+              },
+              {
+                "text": "نراك في وقت اخر "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#باي",
+      "dialog_node": "node_5_1626134099920",
+      "previous_sibling": "node_3_1626131136037"
+    },
+    {
+      "type": "frame",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "التدريب التعاوني هو تدريب على رأس العمل يمكنك من العمل مع فريقنا الهندسي حيث أنك ستكلف بمهام و تعطى لك المراجع الازمة لتنفيذها بالإضافة إلى جلسات استشاريه وارشادية مع أفضل مهندسينا"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "اذا كنت حاب تتعرف علينا ارسل 1 ."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "لعرض المسارات المتاحة للتدريب التعاوني ارسل 2 ."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "للمغادرة ارسل 0"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#انفو",
+      "dialog_node": "node_9_1626130802317",
+      "previous_sibling": "node_2_1626129755536"
+    },
+    {
+      "type": "slot",
+      "parent": "node_9_1626130802317",
+      "dialog_node": "slot_2_1626132890024"
+    },
+    {
+      "type": "slot",
+      "parent": "node_3_1626131136037",
+      "dialog_node": "slot_5_1626132911400"
+    },
+    {
+      "type": "standard",
+      "title": "أي شيء آخر",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "لم أفهم، يمكنك محاولة اعادة الصياغة"
+              },
+              {
+                "text": "هل يمكنك اعادة صياغة عبارتك؟ أنا لا فهم"
+              },
+              {
+                "text": "لم أفهم قصدك"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "أي شيء آخر",
+      "previous_sibling": "node_5_1626134099920",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "مرحبا ",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "مرحبا بك في  للتدريب التعاوني "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "تفضل/ي "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "مرحبا"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": ":هل قصدت",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "كل ما سبق خطأ"
+    },
+    "human_agent_assist": {
+      "prompt": ":هل قصدت"
+    }
+  },
+  "learning_opt_out": false,
+  "name": "تحدث",
+  "language": "ar",
+  "description": ""
+}
